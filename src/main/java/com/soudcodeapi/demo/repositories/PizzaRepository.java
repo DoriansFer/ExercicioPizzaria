@@ -2,8 +2,6 @@ package com.soudcodeapi.demo.repositories;
 
 import com.soudcodeapi.demo.models.Pedido;
 import com.soudcodeapi.demo.models.PizzaPedida;
-import com.soudcodeapi.demo.models.PizzaPedidaHasIngrediente;
-import com.soudcodeapi.demo.models.Tamanho;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,11 +12,11 @@ public class PizzaRepository {
     }
 
     @Repository
-    public interface TamanhoRepository extends JpaRepository<Tamanho, Integer> {
+    public interface TamanhoRepository extends JpaRepository<PizzaPedida.Tamanho, Integer> {
     }
 
     @Repository
-    public interface PizzaPedidaHasIngredienteRepository extends JpaRepository<PizzaPedidaHasIngrediente, Long> {
+    public interface PizzaPedidaHasIngredienteRepository extends JpaRepository<PizzaPedida.PizzaPedidaHasIngrediente, Long> {
     }
 
     @Repository
