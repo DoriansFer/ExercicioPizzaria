@@ -52,4 +52,54 @@ public class Bebida {
     public void setPedidos(Set<Pedido> pedidos) {
         this.pedidos = pedidos;
     }
+
+    @Entity
+    public class BebidaPedida {
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
+
+        @ManyToOne
+        @JoinColumn(name = "bebida_id")
+        private Bebida bebida;
+
+        @Column
+        private int quantidade;
+
+        @ManyToOne
+        @JoinColumn(name = "pedido_id")
+        private Pedido pedido;
+
+        public Long getId() {
+            return id;
+        }
+
+        public void setId(Long id) {
+            this.id = id;
+        }
+
+        public Bebida getBebida() {
+            return bebida;
+        }
+
+        public void setBebida(Bebida bebida) {
+            this.bebida = bebida;
+        }
+
+        public int getQuantidade() {
+            return quantidade;
+        }
+
+        public void setQuantidade(int quantidade) {
+            this.quantidade = quantidade;
+        }
+
+        public Pedido getPedido() {
+            return pedido;
+        }
+
+        public void setPedido(Pedido pedido) {
+            this.pedido = pedido;
+        }
+    }
 }
